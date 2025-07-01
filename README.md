@@ -167,12 +167,3 @@ tests/                    # Testes automatizados
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## 🙏 Agradecimentos
-
-- Professores da disciplina Backend 2 - UTFPR
-- Equipe do Laravel
-- Comunidade PHP
-
----
-
-Desenvolvido com ❤️ por [Seu Nome] - Curso de Sistemas para Internet - UTFPR © 2023
