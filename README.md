@@ -1,66 +1,178 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📝 Sistema de Gerenciamento de Chamados (Backend 2 - UTFPR)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 
-## About Laravel
+Projeto desenvolvido para a disciplina de Backend 2 do curso de Sistemas para Internet da UTFPR, consistindo em um sistema completo de gerenciamento de chamados/tickets com autenticação de usuários e múltiplos níveis de acesso.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Funcionalidades Principais
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Autenticação de usuários** com três perfis:
+  - 👨‍💼 Clientes (abrem e acompanham chamados)
+  - 👩‍💻 Analistas (atendem e resolvem chamados)
+  - 👑 Administradores (gerenciam todo o sistema)
+  
+- **Fluxo completo de chamados**:
+  - Abertura, atribuição, acompanhamento e resolução
+  - Categorização por departamento e nível de urgência
+  - Sistema de comentários públicos/privados
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **API RESTful** para integração com outros sistemas
 
-## Learning Laravel
+- **Relatórios e estatísticas** de desempenho
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Tecnologias Utilizadas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Backend**:
+  - PHP 8.x
+  - Laravel 10.x
+  - MySQL
+  - Laravel Sanctum (Autenticação API)
+  - Laravel Breeze
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Frontend**:
+  - Blade Templates
+  - Tailwind CSS
+  - Alpine.js (interatividade)
 
-## Laravel Sponsors
+- **Ferramentas**:
+  - Docker (ambiente de desenvolvimento)
+  - Composer
+  - Git
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 🚀 Como Executar o Projeto
 
-### Premium Partners
+### Pré-requisitos
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- PHP 8.0+
+- Composer
+- MySQL 5.7+
+- Node.js (para assets)
 
-## Contributing
+### Instalação
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/sistema-chamados-utfpr.git
+cd sistema-chamados-utfpr
+```
 
-## Code of Conduct
+2. Instale as dependências:
+```bash
+composer install
+npm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. Configure o ambiente:
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+4. Configure o banco de dados no arquivo `.env`:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nome_do_banco
+DB_USERNAME=usuario
+DB_PASSWORD=senha
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5. Execute as migrações e seeds:
+```bash
+php artisan migrate --seed
+```
 
-## License
+6. Inicie o servidor:
+```bash
+php artisan serve
+```
+Em outro prompt execute também:
+```bash
+npm run dev
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7. Acesse no navegador:
+```
+http://localhost:8000
+```
+
+### Credenciais de Teste
+
+- **Administrador**:
+  - Email: admin@utfpr.edu.br
+  - Senha: password
+
+- **Analista**:
+  - Email: analista@utfpr.edu.br
+  - Senha: password
+
+- **Cliente**:
+  - Email: cliente@utfpr.edu.br
+  - Senha: password
+
+## 📚 Documentação da API
+
+A API pode ser acessada em `/api` e requer autenticação via token. Consulte a documentação completa em:
+
+[Documentação da API](docs/api.md) (Gerada com Laravel API Documentation Generator)
+
+Exemplo de autenticação:
+```javascript
+const response = await fetch('/api/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    email: 'cliente@utfpr.edu.br',
+    password: 'password',
+    device_name: 'web_app'
+  })
+});
+```
+
+## 🧩 Estrutura do Projeto
+
+```
+app/
+├── Http/
+│   ├── Controllers/
+│   │   ├── Api/          # Controladores da API
+│   │   ├── Analyst/      # Controladores do painel do analista
+│   │   └── Client/       # Controladores do painel do cliente
+│   └── Middleware/       # Middlewares customizados
+config/                   # Configurações do sistema
+database/
+├── migrations/           # Migrações do banco de dados
+├── seeders/              # Dados iniciais
+public/                   # Assets públicos
+resources/
+├── js/                   # JavaScript do frontend
+├── lang/                 # Localizações
+└── views/
+    ├── analyst/          # Views do painel do analista
+    ├── client/           # Views do painel do cliente
+    └── auth/             # Views de autenticação
+routes/
+├── api.php               # Rotas da API
+├── web.php               # Rotas web
+tests/                    # Testes automatizados
+```
+
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## 🙏 Agradecimentos
+
+- Professores da disciplina Backend 2 - UTFPR
+- Equipe do Laravel
+- Comunidade PHP
+
+---
+
+Desenvolvido com ❤️ por [Seu Nome] - Curso de Sistemas para Internet - UTFPR © 2023
