@@ -35,10 +35,6 @@ Projeto desenvolvido para a disciplina de Backend 2 do curso de Sistemas para In
   - Blade Templates
   - Tailwind CSS
   - Alpine.js (interatividade)
-
-- **Ferramentas**:
-  - Docker (ambiente de desenvolvimento)
-  - Composer
   - Git
 
 ## 🚀 Como Executar o Projeto
@@ -99,19 +95,6 @@ npm run dev
 http://localhost:8000
 ```
 
-### Credenciais de Teste
-
-- **Administrador**:
-  - Email: admin@utfpr.edu.br
-  - Senha: password
-
-- **Analista**:
-  - Email: analista@utfpr.edu.br
-  - Senha: password
-
-- **Cliente**:
-  - Email: cliente@utfpr.edu.br
-  - Senha: password
 
 ## 📚 Documentação da API
 
